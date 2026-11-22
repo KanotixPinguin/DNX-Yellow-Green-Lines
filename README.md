@@ -54,3 +54,12 @@ sudo ./install.sh uninstall
 
 Backups: `/opt/dnx-yellow-green-lines-backups`.
 
+---
+
+## Verbindungen im DNX-Ökosystem
+
+![DNX Gesamtarchitektur & Verbindungen](docs/dnx-architektur-verbindungen.png)
+
+* **Verbindung zu `DNX-Styler`:** Die beiden Werkzeuge `Gelb Hover` (`t_gelb`) und `Gruen Tuning` (`t_gruen`) lassen sich direkt in `#dnx-blk-tools` (`Werkzeuge an / aus`) schalten und über `styler_share.py` (`:8098/dnx/styler/std`) als Global-Standard vorgeben.
+* **Verbindung zu `DNX-Receiver-Account-Control`:** Über `:8095/api/me` prüfen die Rechte `yellow_hover` und `green_tuning` die rollenabhängige Freigabe.
+* **Verbindung zu `DNX-Receiver-Tool-Button-Bar`:** Beide Schalter binden sich wahlweise in die gemeinsame 15er-/Master-Werkzeugzeile (`#dnx-master-tool-row`) ein oder schweben per Drag (`dnx.line.btn.pos.v1`) frei auf der Oberfläche.
